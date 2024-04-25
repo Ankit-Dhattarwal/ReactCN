@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { initializeApp } from 'firebase/app';
+import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
   apiKey: "AIzaSyByUUPWt1gahC10XP4NkSov4RJ7wRE0xHM",
@@ -17,3 +17,4 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 ReactDOM.render(<App />, document.getElementById('root'));
+

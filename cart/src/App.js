@@ -2,6 +2,7 @@ import React from 'react';
 import Cart from './Cart';
 import Navbar from './Navbar';
 
+
 class App extends React.Component {
 
   constructor () {
@@ -13,6 +14,17 @@ class App extends React.Component {
     // this.increaseQuantity = this.increaseQuantity.bind(this);
     // this.testing();
   }
+
+  // componentDidMount() {
+  //   firebase
+  //   .firestore()
+  //   .collection('products')
+  //   .get()
+  //   .then((snapshot) => {
+  //     console.log(snapshot);
+  //   })
+  // }
+
   handleIncreaseQuantity = (product) => {
     console.log('Heyy please inc the qty of ', product);
     const { products } = this.state;
@@ -67,7 +79,7 @@ class App extends React.Component {
     let cartTotal = 0;
 
     products.map((product) => {
-      cartTotal = cartTotal + product.qty * product.price
+     return cartTotal = cartTotal + product.qty * product.price
     })
 
     return cartTotal;
