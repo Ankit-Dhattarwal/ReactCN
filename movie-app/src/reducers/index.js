@@ -1,18 +1,33 @@
 /// Make reducers function as the pure functions
 
-import { ADD_MOVIES } from "../actions";
+import { ADD_MOVIES , ADD_FAVOURITE} from "../actions";
 
 const intitalMoviesState = {
   list: [],
   favourites: []
 }
 export default function movies(state = intitalMoviesState, action) {
-if(action.type === ADD_MOVIES){
-  return {
-    ...state,
-    list: action.movies,
+// if(action.type === ADD_MOVIES){
+//   return {
+//     ...state,
+//     list: action.movies,
+//   }
+// }
+// return state; 
+
+  switch(action.type){
+    case ADD_MOVIES:
+      return {
+        ...state,
+        list: action.movies
+      }
+    case ADD_FAVOURITE:
+      return{
+        ...state,
+        favourites: [action.movie, ...state.favourites]
+      }
+    default:
+      return state;  
   }
-}
-return state; 
 }
 
