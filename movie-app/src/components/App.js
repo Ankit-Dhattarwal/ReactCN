@@ -38,22 +38,22 @@ class App extends React.Component {
 
   // const { list, favourites, showFavourite } = this.props.store.getState(); /// { list: [], favouties: []}
 
-  const {movies} = this.props.store.getState(); /// {movies: {}, search: {}}
+  const {movies, search} = this.props.store.getState(); /// {movies: {}, search: {}}
   const { list, favourites, showFavourite } = movies; 
 
 
   const displayMovies = showFavourite ? favourites : list;
   return (
     <div className="App">
-      <Navbar/>
+      <Navbar dispatch={this.props.store.dispatch} search={search}/>
       <div className="main">
-        <div className="tabs">
+        <div className="tabs"> 
           <div className={`tab ${showFavourite ? '' : 'active-tabs'}`} onClick={() => this.onChangeTab(false)}>Movies</div>
           <div className={`tab ${showFavourite ? 'active-tabs' : '' }`}  onClick={() => this.onChangeTab(true)}>Favourites</div>
         </div>
         <div className="list">
           {displayMovies.map((movie, index) => (
-            <MovieCard movie={movie} key={`movie-${index}`} dispatch={this.props.store.dispatch} isFavourite={this.isMovieFavourite(movie)}/>
+            <MovieCard movie={movie} key={`movie-${index}`}  dispatch={this.props.store.dispatch} isFavourite={this.isMovieFavourite(movie)}/>
           ))}
         </div>
         {displayMovies.length === 0 ? <div className="no-movies">No moives to display!</div> : null}
