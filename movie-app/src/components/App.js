@@ -3,6 +3,7 @@ import {data} from '../data';
 import Navbar from './Navbar';
 import MovieCard from "./MovieCard";
 import { addMovies, setShowFavourite } from "../actions";
+import { StoreContext } from "../index";
 
 class App extends React.Component {
 
@@ -43,23 +44,30 @@ class App extends React.Component {
 
 
   const displayMovies = showFavourite ? favourites : list;
+
   return (
-    <div className="App">
-      <Navbar dispatch={this.props.store.dispatch} search={search}/>
-      <div className="main">
-        <div className="tabs"> 
-          <div className={`tab ${showFavourite ? '' : 'active-tabs'}`} onClick={() => this.onChangeTab(false)}>Movies</div>
-          <div className={`tab ${showFavourite ? 'active-tabs' : '' }`}  onClick={() => this.onChangeTab(true)}>Favourites</div>
-        </div>
-        <div className="list">
-          {displayMovies.map((movie, index) => (
-            <MovieCard movie={movie} key={`movie-${index}`}  dispatch={this.props.store.dispatch} isFavourite={this.isMovieFavourite(movie)}/>
-          ))}
-        </div>
-        {displayMovies.length === 0 ? <div className="no-movies">No moives to display!</div> : null}
-      </div>
-    </div>
-  );
+    <StoreContext.Consumer>
+      {(store)=> {
+        return (
+          <div className="App">
+            <Navbar dispatch={this.props.store.dispatch} search={search}/>
+            <div className="main">
+              <div className="tabs"> 
+                <div className={`tab ${showFavourite ? '' : 'active-tabs'}`} onClick={() => this.onChangeTab(false)}>Movies</div>
+                <div className={`tab ${showFavourite ? 'active-tabs' : '' }`}  onClick={() => this.onChangeTab(true)}>Favourites</div>
+              </div>
+              <div className="list">
+                {displayMovies.map((movie, index) => (
+                  <MovieCard movie={movie} key={`movie-${index}`}  dispatch={this.props.store.dispatch} isFavourite={this.isMovieFavourite(movie)}/>
+                ))}
+              </div>
+              {displayMovies.length === 0 ? <div className="no-movies">No moives to display!</div> : null}
+            </div>
+          </div>
+        );
+      }}
+    </StoreContext.Consumer>
+  )
           }
 }
 
