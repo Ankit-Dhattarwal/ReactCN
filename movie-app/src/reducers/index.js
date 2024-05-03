@@ -88,7 +88,8 @@ export function search (state = initialSearchState, action){
 //   }
 // }
 
-/// we not need to create to reducer function to combine reducer bcz reducer also provide 
+/// we not need to create to reducer function to combine reducer bcz reducer also provide
+/// This is my root reducer  
 export default  combineReducers({
   movies: movies,
   search: search
