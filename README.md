@@ -11,7 +11,7 @@ This is a movie application built using React. It allows users to browse a colle
 
 ## 📸 Screenshots
 ### Home Page
-![Home Page](<img width="1436" alt="ss_homePage" src="https://github.com/Ankit-Dhattarwal/ReactCN/assets/109728587/f968231a-e1e4-41fa-bfd1-642164ce8cb1">)
+![Home Page](https://github.com/Ankit-Dhattarwal/ReactCN/assets/109728587/d2ad78b8-3b5b-4467-9864-199571e1c13e)
 *Screenshot of the home page displaying a list of movies.*
 
 ### Search Functionality
