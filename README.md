@@ -11,23 +11,23 @@ This is a movie application built using React. It allows users to browse a colle
 
 ## 📸 Screenshots
 ### Home Page
-![Home Page]
+![Home Page](<img width="1436" alt="ss_homePage" src="https://github.com/Ankit-Dhattarwal/ReactCN/assets/109728587/f968231a-e1e4-41fa-bfd1-642164ce8cb1">)
 *Screenshot of the home page displaying a list of movies.*
 
 ### Search Functionality
-![Search Functionality]
+![Search Functionality]()
 *Screenshot of the search functionality, allowing users to search for specific movies.*
 
 ### Favorites Section
-![Favorites Section]
+![Favorites Section]()
 *Screenshot of the favorites section displaying favorite movies.*
 
 ### Add to Favorites
-![Add to Favorites]
+![Add to Favorites]()
 *Screenshot of adding a movie to favorites.*
 
 ### Favorites Section (Updated)
-![Favorites Section (Updated)]
+![Favorites Section (Updated)]()
 *Screenshot of the favorites section after adding a movie to favorites.*
 
 ## 🚀 Installation
